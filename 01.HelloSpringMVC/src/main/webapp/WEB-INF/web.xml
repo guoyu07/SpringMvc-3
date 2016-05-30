@@ -5,9 +5,20 @@
 
 	<display-name>Hello Spring MVC</display-name>
 	
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>/WEB-INF/springConfig-servlet.xml</param-value>	
+	</context-param>
+	
 	<servlet>
-		<servlet-name>springConfig</servlet-name>
+		<servlet-name>springConfig1</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value></param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+		
 		<!-- Uncomment the following piece if servlet-name and spring config patterns are different. -->
 		<!-- <init-param>
 			<param-name>contextConfigLocation</param-name>
@@ -16,8 +27,11 @@
 	</servlet>
 	
 	<servlet-mapping>
-		<servlet-name>springConfig</servlet-name>
+		<servlet-name>springConfig1</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
 
+	<listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
 </web-app>
