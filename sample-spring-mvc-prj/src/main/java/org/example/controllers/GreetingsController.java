@@ -31,10 +31,11 @@ public class GreetingsController {
 	}
 	
 	@RequestMapping(value="/submit", method=RequestMethod.POST)
-	public String submit(@ModelAttribute("userData") Person person){
+	@ResponseBody
+	public Person submit(@ModelAttribute("userData") Person person){
 		System.out.println(person);
-		this.person = person;
-		return "submitForm";
+		return this.person = person;
+		
 	}
 	
 }
