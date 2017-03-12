@@ -23,11 +23,13 @@ public class AdviceClass {
 	@ModelAttribute
 	public void modelAttribute(Model model){
 		//We can add the model attributes
+		System.out.println("Model Attribute");
 	}
 	
 	@InitBinder
 	public void initBinder(WebDataBinder webDataBinder){
 		//webDataBinder.setBindEmptyMultipartFiles(false);
+		System.out.println("Init Binder");
 	}
 	
 	

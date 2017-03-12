@@ -19,11 +19,11 @@ public class GreetingsController {
 	@Autowired
 	private Person person;
 	
-	@RequestMapping("/info")
+	/*@RequestMapping("/info")
 	@ResponseBody
 	public Person getPersonInfo(){
 		return this.person;
-	}
+	}*/
 	
 	@RequestMapping("/home")
 	public String display(){
